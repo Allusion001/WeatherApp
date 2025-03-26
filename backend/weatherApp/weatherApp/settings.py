@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-a+f4v(v&p+#)c8i3je=5xf2yjx48^57%gs$j0dq0xsy5_^+0&9"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -62,7 +62,7 @@ TEMPLATES = [
          "DIRS": [
             BASE_DIR / 'build'
         ],
-        "DIRS": [],
+       
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -114,13 +114,6 @@ USE_I18N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/5.0/howto/static-files/
-
-STATIC_URL = "static/"
-
-# Default primary key field type
-# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
@@ -129,14 +122,12 @@ STATIC_URL = "/static/"
 STATICFILES_DIRS=[
     BASE_DIR/'build/static/'
 ]
-STATIC_ROOT = BASE_DIR / "staticfiles" 
 
 STATICFILES_STORAGE = (
     'whitenoise.storage.CompressedManifestStaticFilesStorage')
 
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
-STATIC_URL = '/static/'  # already declared in the default settings
 
 CORS_ALLOW_ALL_ORIGINS=True
 
